@@ -1,2 +1,2 @@
-var test = TEST;
-debugger;
+var test = 'TEST';
+
