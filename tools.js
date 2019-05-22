@@ -1,8 +1,1 @@
-var tools = {
-	
-	
-	alert : function(){
-	   alert('X');
-	}
-	
-};
+var test = TEST;
