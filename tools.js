@@ -1,2 +1,9 @@
-var test = 'TEST';
-
+var jstools = {
+	
+	
+	alert : function(){
+	   alert('X');
+	}
+		
+};
+debugger;
