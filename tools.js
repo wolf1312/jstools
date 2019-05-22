@@ -1,4 +1,4 @@
-var jstools = {
+window.jstools = {
 	
 	
 	alert : function(){
