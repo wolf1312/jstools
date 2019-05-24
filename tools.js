@@ -1,5 +1,7 @@
 window.jstools = {
-		
+	getBt:function(html,appendTo){
+           return $('<button/>').css({'margin':'2px'}).html(html).appendTo(appendTo);
+        },    	
 	getTable:function(rows,columns,appendTo){
 		var tab = $('<table/>').appendTo(appendTo);
 		var tds = [];
