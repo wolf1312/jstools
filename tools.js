@@ -35,7 +35,7 @@ window.jstools = {
                 jstools.getBt(p,tds[i][2+power+j]).click(function() { eval(line[1]+'=Math.pow(10,j)+'+line[1]);  update(); });            
             }
         }
-      };			
+      }			
 };
 
 function bodyelementpattern(name){
