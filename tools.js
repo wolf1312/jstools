@@ -19,7 +19,7 @@ window.jstools = {
           for ( var i = 0; i < fields.length; i++ ){     
              texts[i].html( eval(fields[i][1]) );
           }
-          postchange();
+          if(postchange) postchange();
         }   
         var tds = jstools.getTable(fields.length,2*power+2,assignto);
         for ( let i = 0; i < fields.length; i++ ){
