@@ -11,8 +11,31 @@ window.jstools = {
 			for(let j=0; j < columns; j++) tds[i][j] = $('<td/>').appendTo(row);
 		}
 		return tds;
-	}   
-		
+	},   
+       pmTable:function( assignto, fields, postchange, power ){
+        this.fields = fields;
+        var texts = this.texts = [];
+        var update = this.update = function(){
+          for ( var i = 0; i < fields.length; i++ ){     
+             texts[i].html( eval(fields[i][1]) );
+          }
+          postchange();
+        }   
+        var tds = jstools.getTable(fields.length,2*power+2,assignto);
+        for ( let i = 0; i < fields.length; i++ ){
+            let line = fields[i];
+            tds[i][0].append(line[0]).css({"margin":"5px"});
+            texts[i] = jstools.getBt(eval(line[1]),tds[i][1+power]).click(function() { eval(line[1]+'=0'); update(); });
+          
+            m = p = '';
+            for ( let j = 0; j < power; j++ ){   
+                m += '-';
+                p += '+';
+                jstools.getBt(m,tds[i][power-j]).click(function() { eval(line[1]+'=-Math.pow(10,j)+'+line[1]); update(); });
+                jstools.getBt(p,tds[i][2+power+j]).click(function() { eval(line[1]+'=Math.pow(10,j)+'+line[1]);  update(); });            
+            }
+        }
+      };			
 };
 
 function bodyelementpattern(name){
